@@ -3,19 +3,19 @@ import './App.css';
 import {useEffect, useState} from "react"
 import Chat from './Chat';
 
-let socket;
-const CONNECTION_PORT='https://serverchat-mxy7.onrender.com'
+// let socket;
+// const CONNECTION_PORT='https://serverchat-mxy7.onrender.com'
 
-// const socket = io.connect('https://serverchat-mxy7.onrender.com');
+const socket = io.connect('https://serverchat-mxy7.onrender.com');
 
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
 
-  useEffect(()=>{
-    socket=io(CONNECTION_PORT)
-  },[CONNECTION_PORT])
+  // useEffect(()=>{
+  //   socket=io(CONNECTION_PORT)
+  // },[CONNECTION_PORT])
 
   const joinRoom=()=>{
     if (username !== "" && room !== "") {
